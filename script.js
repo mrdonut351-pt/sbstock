@@ -39,22 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         else switchLanguage('en');
 
         setupEventListeners();
-        // Botão toggle do idioma no mobile
-const langToggle = document.querySelector('.lang-toggle');
-const langPopup = document.getElementById('lang-popup');
-
-if (langToggle) {
-  langToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    langPopup.style.display = langPopup.style.display === 'block' ? 'none' : 'block';
-  });
-
-  document.addEventListener('click', () => {
-    langPopup.style.display = 'none';
-  });
-}
-
-
         loadDataWithRetry(5);
     }
 
