@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>MRDONUT Inventory</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <h1>MRDONUT INVENTORY</h1>
+
+  <div class="buttons">
+    <button id="sort-default" class="sort-btn"><i class="fas fa-bars"></i> Padrão</button>
+    <button id="sort-price-asc" class="sort-btn"><i class="fas fa-sort-amount-up"></i> Menor-Maior</button>
+    <button id="sort-price-desc" class="sort-btn"><i class="fas fa-sort-amount-down"></i> Maior-Menor</button>
+    <div style="position: relative; display: inline-block;">
+      <button id="size-filter-toggle" class="sort-btn"><i class="fas fa-filter"></i> Filtrar por Tamanho</button>
+      <div id="size-filter-panel"></div>
+    </div>
+  </div>
+
+  <input type="text" id="search" placeholder="Pesquisar pelo nome...">
+  <button id="reset-filters">Redefinir Filtros</button>
+
+  <div class="lang-container">
+    <button id="lang-pt" class="lang-btn">PT</button>
+    <button id="lang-en" class="lang-btn">EN</button>
+  </div>
+</header>
+
+  <main>
+    <div id="loading">Loading...</div>
+    <div id="no-results" style="display:none;"><p>No matching items found</p></div>
+    <div id="shoe-grid"></div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> MRDONUT Inventory</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span id="lightbox-close" class="close-btn">&times;</span>
+    <img id="lightbox-img" src="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

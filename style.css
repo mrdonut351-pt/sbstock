@@ -1,0 +1,198 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #4f9587;
+}
+header {
+  padding: 1rem;
+  background: #4f9587;
+  color: #fff;
+  text-align: center;
+}
+header h1 {
+  margin: 0 0 1rem 0;
+}
+#search {
+  padding: 0.5rem;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.sort-btn, #size-filter-toggle, #reset-filters {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sort-btn.active {
+  background: rgb(1, 75, 55);
+  color: #fff;
+}
+#shoe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.shoe-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.shoe-image {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.size-badge {
+  display: inline-block;
+  margin: 2px;
+  padding: 0.3rem 0.5rem;
+  background: #eee;
+  border-radius: 4px;
+}
+#lightbox {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+#lightbox-img {
+  max-width: 80%;
+  max-height: 80%;
+  cursor: zoom-in;
+}
+.close-btn {
+  position: absolute;
+  top:20px;
+  right:30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Painel de filtro de tamanhos */
+#size-filter-panel {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: none;
+  z-index: 1000;
+  max-width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#size-filter-panel.show {
+  display: block;
+}
+
+#size-filter-panel label {
+  display: inline-block;
+  margin: 4px;
+}
+
+#size-filter-panel input[type="checkbox"] {
+  display: none;
+}
+
+#size-filter-panel span {
+  display: inline-block;
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+  background: #eee;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#size-filter-panel input[type="checkbox"]:checked + span {
+  background: #4f9587;
+  color: #fff;
+  font-weight: bold;
+}
+.lang-btn {
+  border: none;
+  border-radius: 50%;      /* torna redondo */
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  background: #4f9587;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.lang-btn.active {
+  background: #fff;
+  color: #4f9587;
+}
+
+/* posicionar no canto superior direito */
+header {
+  position: relative;  /* necessário para posicionamento absoluto dos botões */
+}
+
+.lang-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+/* Painel de filtro de tamanho ao lado do botão */
+#size-filter-panel {
+  position: absolute;
+  top: 100%;           /* logo abaixo do botão */
+  left: 0;             /* alinhado com o botão */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: none;
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+#size-filter-panel.show {
+  display: block;
+}
+#size-filter-panel label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+#size-filter-panel input[type="checkbox"] {
+  margin-right: 5px;
+}
