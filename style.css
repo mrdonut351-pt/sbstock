@@ -207,7 +207,7 @@ footer {
 
 /* =================== BOTÕES DE LÍNGUA =================== */
 .lang-container {
-  position: absolute; /* no desktop fica fixo no canto */
+  position: absolute; /* Desktop → canto superior direito */
   top: 10px;
   right: 10px;
   display: flex;
@@ -235,7 +235,7 @@ footer {
   color: #4f9587;
 }
 
-/* Wrapper Reset + Idiomas */
+/* Agrupamento Reset + Idiomas */
 .reset-lang-wrapper {
   margin-top: 0.5rem;
   display: flex;
@@ -243,6 +243,20 @@ footer {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+/* =================== RESPONSIVIDADE =================== */
+@media (max-width: 768px) {
+  /* No mobile, PT/EN entra no fluxo normal */
+  .lang-container {
+    position: static;     /* deixa de ser absoluto */
+    justify-content: center;
+  }
+
+  .reset-lang-wrapper {
+    flex-direction: row;  /* mantém botão + idiomas lado a lado */
+    justify-content: center;
+  }
 }
 
 /* =================== RESPONSIVIDADE =================== */
