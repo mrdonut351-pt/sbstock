@@ -1,3 +1,4 @@
+
 /* =================== ESTILO GERAL =================== */
 body {
   font-family: Arial, sans-serif;
@@ -107,25 +108,21 @@ header h1 {
 }
 
 /* =================== TAMANHOS =================== */
-.sizes-container {
-  margin-top: 0.5rem;
-  font-size: 13px;   /* tamanho do texto "Tamanhos Disponíveis:" */
-  font-weight: bold; /* deixa mais destacado */
-}
-
 .size-badge {
   display: inline-block;
-  margin: 1px;              /* margem ajustada */
-  padding: 0.8rem 1.2rem;   /* espaçamento interno */
+  margin: 5px;
+  padding: 0.8rem 1.0rem;
   background: #4f9587;
   color: #fff;
-  border-radius: 6px;
-  font-size: 17px;          /* tamanho do número */
-  font-weight: bold;        /* destaque extra */
+  border-radius: 4px;
+  font-size: 16px; /* alterado */
+  font-weight: bold; /* adicionado */
 }
 
 .sizes-container {
   margin-top: 0.5rem;
+  font-size: 18px; /* adicionado para texto "Tamanhos disponíveis" */
+  font-weight: bold;
 }
 
 /* =================== LIGHTBOX =================== */
@@ -244,7 +241,8 @@ footer {
   background: #fff;
   color: #4f9587;
 }
-/* Tablets */
+
+/* =================== RESPONSIVIDADE =================== */
 @media (max-width: 768px) {
   #shoe-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -254,24 +252,39 @@ footer {
     font-size: 16px;
   }
 
+  .product-price {
+    font-size: 16px;
+  }
+
   .size-badge {
     font-size: 14px;
     padding: 0.6rem 0.8rem;
   }
+
+  .sizes-container {
+    font-size: 16px;
+  }
 }
 
-/* Telemóveis */
 @media (max-width: 480px) {
   #shoe-grid {
-    grid-template-columns: 1fr; /* só 1 produto por linha */
+    grid-template-columns: 1fr;
   }
 
   .shoe-card {
     padding: 0.8rem;
   }
 
+  .shoe-card h2 {
+    font-size: 14px;
+  }
+
+  .product-price {
+    font-size: 14px;
+  }
+
   .size-badge {
-    font-size: 13px;
+    font-size: 12px;
     padding: 0.5rem 0.7rem;
   }
 
