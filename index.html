@@ -1,33 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MRDONUT Inventory</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-  <h1>MRDONUT INVENTORY</h1>
+    <h1>MRDONUT INVENTORY</h1>
 
-  <div class="buttons">
-    <button id="sort-default" class="sort-btn"><i class="fas fa-bars"></i> Padrão</button>
-    <button id="sort-price-asc" class="sort-btn"><i class="fas fa-sort-amount-up"></i> Menor-Maior</button>
-    <button id="sort-price-desc" class="sort-btn"><i class="fas fa-sort-amount-down"></i> Maior-Menor</button>
-    <div style="position: relative; display: inline-block;">
-      <button id="size-filter-toggle" class="sort-btn"><i class="fas fa-filter"></i> Filtrar por Tamanho</button>
-      <div id="size-filter-panel"></div>
+    <div class="buttons">
+      <button id="sort-default" class="sort-btn"><i class="fas fa-bars"></i> Padrão</button>
+      <button id="sort-price-asc" class="sort-btn"><i class="fas fa-sort-amount-up"></i> Menor-Maior</button>
+      <button id="sort-price-desc" class="sort-btn"><i class="fas fa-sort-amount-down"></i> Maior-Menor</button>
+      <div style="position: relative; display: inline-block;">
+        <button id="size-filter-toggle" class="sort-btn"><i class="fas fa-filter"></i> Filtrar por Tamanho</button>
+        <div id="size-filter-panel"></div>
+      </div>
     </div>
-  </div>
 
-  <input type="text" id="search" placeholder="Pesquisar pelo nome...">
-  <button id="reset-filters">Redefinir Filtros</button>
+    <input type="text" id="search" placeholder="Pesquisar pelo nome...">
+    <button id="reset-filters">Redefinir Filtros</button>
 
-  <div class="lang-container">
-    <button id="lang-pt" class="lang-btn">PT</button>
-    <button id="lang-en" class="lang-btn">EN</button>
-  </div>
-</header>
+    <div class="lang-container">
+      <button id="lang-pt" class="lang-btn">PT</button>
+      <button id="lang-en" class="lang-btn">EN</button>
+    </div>
+  </header>
 
   <main>
     <div id="loading">Loading...</div>
@@ -50,3 +52,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+```
