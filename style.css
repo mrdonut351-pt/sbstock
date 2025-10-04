@@ -98,7 +98,7 @@ header h1 {
   text-align: center;
 }
 
-/* Descrição (caso adicione futuramente) */
+/* Descrição */
 .product-description {
   font-size: 14px;
   font-style: italic;
@@ -115,13 +115,13 @@ header h1 {
   background: #4f9587;
   color: #fff;
   border-radius: 4px;
-  font-size: 16px; /* alterado */
-  font-weight: bold; /* adicionado */
+  font-size: 16px; 
+  font-weight: bold;
 }
 
 .sizes-container {
   margin-top: 0.5rem;
-  font-size: 18px; /* adicionado para texto "Tamanhos disponíveis" */
+  font-size: 18px; 
   font-weight: bold;
 }
 
@@ -187,14 +187,12 @@ footer {
   cursor: pointer;
 }
 
-/* Esconde o quadrado padrão do checkbox */
 #size-filter-panel input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* Checkbox visual */
 #size-filter-panel span {
   display: inline-block;
   padding: 0.4rem 0.7rem;
@@ -242,9 +240,18 @@ footer {
   color: #4f9587;
 }
 
+/* Wrapper Reset + Idiomas */
+.reset-lang-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* =================== RESPONSIVIDADE =================== */
 @media (max-width: 768px) {
-  /* grade / texto */
   #shoe-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
@@ -266,27 +273,9 @@ footer {
     font-size: 16px;
   }
 
-  /* ********* AQUI: move o lang-container para o fluxo normal e coloca-o inline com reset ********* */
-  /* desativa o absolute no mobile e faz com que fique no fluxo */
+  /* No mobile, tirar PT/EN do canto e alinhar com reset */
   .lang-container {
     position: static;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-left: 0.25rem;
-  }
-
-  /* faz com que o botão de reset e os idiomas possam ficar lado-a-lado */
-  #reset-filters {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.4rem 0.25rem;
-  }
-
-  /* centra o header no mobile (evita sobreposição) */
-  header {
-    text-align: center;
   }
 }
 
@@ -315,23 +304,5 @@ footer {
   .sizes-container {
     font-size: 14px;
   }
-
-  /* mobile extra: garante que reset + idiomas aparecem juntos centralizados */
-  .lang-container {
-    position: static;
-    display: inline-flex;
-    gap: 0.3rem;
-    margin-left: 0.25rem;
-  }
-
-  #reset-filters {
-    display: inline-flex;
-    margin: 0.3rem 0.2rem;
-  }
-
-  /* header menor para caber melhor */
-  header h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.4rem;
-  }
 }
+
