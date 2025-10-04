@@ -1,3 +1,4 @@
+/* =================== ESTILO GERAL =================== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,21 +6,27 @@ body {
   background: #fafafa;
   color: #4f9587;
 }
+
 header {
   padding: 1rem;
   background: #4f9587;
   color: #fff;
   text-align: center;
+  position: relative;
 }
+
 header h1 {
   margin: 0 0 1rem 0;
 }
+
+/* =================== SEARCH & BUTTONS =================== */
 #search {
   padding: 0.5rem;
   width: 80%;
   max-width: 400px;
   margin-bottom: 1rem;
 }
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
@@ -27,40 +34,93 @@ header h1 {
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.sort-btn, #size-filter-toggle, #reset-filters {
+
+.sort-btn,
+#size-filter-toggle,
+#reset-filters {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+
 .sort-btn.active {
   background: rgb(1, 75, 55);
   color: #fff;
 }
+
+/* =================== GRADE DE PRODUTOS =================== */
 #shoe-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(385px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
+
 .shoe-card {
   background: #fff;
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+
+/* Imagem do produto */
 .shoe-image {
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
 }
+
+/* Nome do produto */
+.shoe-card h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f9587;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* SKU */
+.product-sku {
+  font-size: 10px;
+  color: #0d4633;
+  margin: 0.3rem 0;
+  text-align: center;
+}
+
+/* Preço */
+.product-price {
+  font-size: 18px;
+  color: #ff0202;
+  font-weight: bold;
+  margin: 0.3rem 0;
+  text-align: center;
+}
+
+/* Descrição (caso adicione futuramente) */
+.product-description {
+  font-size: 14px;
+  font-style: italic;
+  color: #333;
+  margin: 0.3rem 0;
+  text-align: center;
+}
+
+/* =================== TAMANHOS =================== */
 .size-badge {
   display: inline-block;
   margin: 2px;
   padding: 0.3rem 0.5rem;
-  background: #eee;
+  background: #4f9587;
+  color: #fff;
   border-radius: 4px;
 }
+
+.sizes-container {
+  margin-top: 0.5rem;
+}
+
+/* =================== LIGHTBOX =================== */
 #lightbox {
   display: none;
   position: fixed;
@@ -71,11 +131,13 @@ header h1 {
   align-items: center;
   z-index: 2000;
 }
+
 #lightbox-img {
   max-width: 80%;
   max-height: 80%;
   cursor: zoom-in;
 }
+
 .close-btn {
   position: absolute;
   top:20px;
@@ -84,27 +146,29 @@ header h1 {
   color: #fff;
   cursor: pointer;
 }
+
+/* =================== FOOTER =================== */
 footer {
   text-align: center;
   padding: 1rem;
-  background: #111;
+  background: #4f9587;
   color: #fff;
   margin-top: 2rem;
 }
 
-/* Painel de filtro de tamanhos */
+/* =================== FILTRO DE TAMANHO =================== */
 #size-filter-panel {
-  position: fixed;
-  top: 70px;
-  right: 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0.5rem;
   display: none;
+  min-width: 150px;
   z-index: 1000;
-  max-width: 220px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 #size-filter-panel.show {
@@ -112,14 +176,20 @@ footer {
 }
 
 #size-filter-panel label {
-  display: inline-block;
-  margin: 4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
+/* Esconde o quadrado padrão do checkbox */
 #size-filter-panel input[type="checkbox"] {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
+/* Checkbox visual */
 #size-filter-panel span {
   display: inline-block;
   padding: 0.4rem 0.7rem;
@@ -136,9 +206,19 @@ footer {
   color: #fff;
   font-weight: bold;
 }
+
+/* =================== BOTÕES DE LÍNGUA =================== */
+.lang-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+}
+
 .lang-btn {
   border: none;
-  border-radius: 50%;      /* torna redondo */
+  border-radius: 50%;
   width: 35px;
   height: 35px;
   margin-left: 5px;
@@ -155,44 +235,4 @@ footer {
 .lang-btn.active {
   background: #fff;
   color: #4f9587;
-}
-
-/* posicionar no canto superior direito */
-header {
-  position: relative;  /* necessário para posicionamento absoluto dos botões */
-}
-
-.lang-container {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 5px;
-}
-
-/* Painel de filtro de tamanho ao lado do botão */
-#size-filter-panel {
-  position: absolute;
-  top: 100%;           /* logo abaixo do botão */
-  left: 0;             /* alinhado com o botão */
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0.5rem;
-  display: none;
-  min-width: 150px;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-#size-filter-panel.show {
-  display: block;
-}
-#size-filter-panel label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-#size-filter-panel input[type="checkbox"] {
-  margin-right: 5px;
 }

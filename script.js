@@ -128,30 +128,33 @@ document.addEventListener('DOMContentLoaded', function() {
         return Object.values(grouped);
     }
 
-    function displayItems(items) {
-        const grid = document.getElementById('shoe-grid');
-        grid.innerHTML = '';
-        if (!items.length) { document.getElementById('no-results').style.display = 'flex'; return; }
-        document.getElementById('no-results').style.display = 'none';
-        items.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'shoe-card';
-            card.innerHTML = `
-                <div class="shoe-image-container">
-                    <img src="${item.image}" alt="${item.name}" class="shoe-image">
-                </div>
-                <div class="shoe-info">
-                    <h2>${item.name}</h2>
-                    <p>SKU: ${item.sku}</p>
-                    <div class="price">${item.price}</div>
-                    <div class="sizes-container">
-                        <p>${translations[currentLanguage].availableSizes}</p>
-                        ${item.sizes.map(s => `<span class="size-badge">${s.size}<span class="size-quantity">(${s.quantity})</span></span>`).join('')}
-                    </div>
-                </div>`;
-            grid.appendChild(card);
-        });
+   function displayItems(items) {
+    const grid = document.getElementById('shoe-grid');
+    grid.innerHTML = '';
+    if (!items.length) { 
+        document.getElementById('no-results').style.display = 'flex'; 
+        return; 
     }
+    document.getElementById('no-results').style.display = 'none';
+    items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'shoe-card';
+        card.innerHTML = `
+            <div class="shoe-image-container">
+                <img src="${item.image}" alt="${item.name}" class="shoe-image">
+            </div>
+            <div class="shoe-info">
+                <h2>${item.name}</h2>
+                <p class="product-sku">SKU: ${item.sku}</p>
+                <div class="product-price">${item.price}</div>
+                <div class="sizes-container">
+                    <p>${translations[currentLanguage].availableSizes}</p>
+                    ${item.sizes.map(s => `<span class="size-badge">${s.size}<span class="size-quantity">(${s.quantity})</span></span>`).join('')}
+                </div>
+            </div>`;
+        grid.appendChild(card);
+    });
+}
 
     function sortItems(sortType) {
         currentSort = sortType;
