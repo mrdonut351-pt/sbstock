@@ -207,3 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     init();
 });
+document.getElementById("lang-toggle").addEventListener("click", () => {
+  document.getElementById("lang-popup").classList.toggle("show");
+});
+
+// Ligar os botões mobile ao mesmo switchLanguage que já tens
+document.getElementById("lang-pt-mobile").addEventListener("click", () => switchLanguage("pt"));
+document.getElementById("lang-en-mobile").addEventListener("click", () => switchLanguage("en"));
