@@ -65,14 +65,12 @@ header h1 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Imagem do produto */
 .shoe-image {
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* Nome do produto */
 .shoe-card h2 {
   font-size: 20px;
   font-weight: bold;
@@ -81,7 +79,6 @@ header h1 {
   text-align: center;
 }
 
-/* SKU */
 .product-sku {
   font-size: 10px;
   color: #0d4633;
@@ -89,7 +86,6 @@ header h1 {
   text-align: center;
 }
 
-/* Preço */
 .product-price {
   font-size: 18px;
   color: #ff0202;
@@ -98,7 +94,6 @@ header h1 {
   text-align: center;
 }
 
-/* Descrição */
 .product-description {
   font-size: 14px;
   font-style: italic;
@@ -115,13 +110,13 @@ header h1 {
   background: #4f9587;
   color: #fff;
   border-radius: 4px;
-  font-size: 16px; 
+  font-size: 16px;
   font-weight: bold;
 }
 
 .sizes-container {
   margin-top: 0.5rem;
-  font-size: 18px; 
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -212,7 +207,7 @@ footer {
 
 /* =================== BOTÕES DE LÍNGUA =================== */
 .lang-container {
-  position: absolute;
+  position: absolute; /* no desktop fica fixo no canto */
   top: 10px;
   right: 10px;
   display: flex;
@@ -273,9 +268,9 @@ footer {
     font-size: 16px;
   }
 
-  /* No mobile, tirar PT/EN do canto e alinhar com reset */
+  /* >>> Aqui a correção principal <<< */
   .lang-container {
-    position: static;
+    position: static;  /* deixa de ser absoluto no mobile */
   }
 }
 
@@ -305,4 +300,3 @@ footer {
     font-size: 14px;
   }
 }
-
